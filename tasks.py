@@ -13,7 +13,7 @@ def make_celery(app):
     celery.Task = ContextTask
     return celery
 
-from app import create_app
+from nyna import create_app
 app = create_app(Config())
 celery = make_celery(app)
 

@@ -4,7 +4,7 @@ import os
 from flask.ext.script import Manager, Shell, Server
 from flask.ext.security.script import CreateUserCommand, AddRoleCommand, RemoveRoleCommand,ActivateUserCommand, DeactivateUserCommand
 from script import InstallCommand, ResetUserCommand
-from app import create_app
+from nyna import create_app
 
 from settings import DevConfig, ProdConfig
 
