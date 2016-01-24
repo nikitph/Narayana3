@@ -13,7 +13,8 @@ class Config(object):
     CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
     BROKER_URL = 'redis://localhost:6379/10'
     MONGODB_SETTINGS = {
-        'DB': 'mongodb://<dbuser>:<dbpassword>@ds049925.mongolab.com:49925/heroku_qs9p8wh7'
+        'DB': 'heroku_qs9p8wh7',
+        'host': 'mongodb://admin:4eea068816@ds049925.mongolab.com:49925/heroku_qs9p8wh7'
     }
 
     #security
