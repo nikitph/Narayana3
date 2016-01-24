@@ -15,12 +15,12 @@ except ImportError:
     LocalConfig = None
 
 
-if os.environ.get("ENFERNO_ENV") == 'prod':
-    app = create_app(ProdConfig)
-elif LocalConfig :
-    app = create_app(LocalConfig)
-else:
-    app = create_app(DevConfig)
+# if os.environ.get("ENFERNO_ENV") == 'prod':
+app = create_app(ProdConfig)
+# elif LocalConfig :
+#     app = create_app(LocalConfig)
+# else:
+#     app = create_app(DevConfig)
 
 manager = Manager(app)
 
