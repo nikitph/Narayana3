@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
-    <script src="/static/metricsgraphics.js"></script>
     {% block script %}
 
         <script>
@@ -22,6 +21,8 @@
 
         $(document).ready(function() {
     $('select').material_select();
+                $(".button-collapse").sideNav();
+
   });
 
 
@@ -364,8 +365,9 @@ width: 90%; }#}
 
     <nav class="z-depth-0">
         <div class="nav-wrapper brown lighten-5">
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
 
-            <ul id="nav-mobile">
+            <ul id="nav-mobile" class="hide-on-med-and-down">
                 <li><a href="/hiw" class="black-text">How it works</a></li>
 
                 <li><a href="/about" class="black-text">About</a></li>
@@ -390,6 +392,26 @@ width: 90%; }#}
                 {% endif %}
                 <br>
             </ul>
+
+        <ul class="side-nav" id="mobile-demo">
+        <li><a href="/hiw" class="black-text">How it works</a></li>
+
+                <li><a href="/about" class="black-text">About</a></li>
+       {% if g.user.get_id() is none %}
+
+                    <li><a href="/login" class="black-text">Login</a></li>
+                {% else %}
+                                        <li><a href="/record" class="black-text">Record</a></li>
+                                        <li><a href="/access" class="black-text">Access</a></li>
+
+
+                    <li><a href="/logout" class="black-text">Logout</a></li>
+                {% endif %}
+                {% if g.user.get_id() is none %}
+
+                    <li><a href="/register" class="black-text">Signup</a></li>
+                {% endif %}
+      </ul>
 
         </div>
     </nav>

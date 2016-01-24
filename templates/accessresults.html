@@ -3,6 +3,8 @@
 
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function () {
+              $('select').material_select();
+                $(".button-collapse").sideNav();
 
             var msg = {{ thoughts|safe }};
             var timeseries = [];
@@ -15,12 +17,12 @@
 
             }
 
-            loadgraph(timeseries);
+{#            loadgraph(timeseries);#}
 
 
         });
 
-        function loadgraph(d) {
+        {#function loadgraph(d) {
             var data1 = d;
 
             MG.data_graphic({
@@ -42,7 +44,7 @@
                 x_extended_ticks: true,
                 show_secondary_x_label: false,
         show_confidence_band: ['l', 'u']});
-        }
+        }#}
     </script>
 
 
