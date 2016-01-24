@@ -12,6 +12,7 @@ class Config(object):
     DEBUG_TB_INTERCEPT_REDIRECTS = False
     CACHE_TYPE = 'simple'  # Can be "memcached", "redis", etc.
     BROKER_URL = 'redis://localhost:6379/10'
+    ENFERNO_ENV = 'prod'
     MONGODB_SETTINGS = {
         'db': 'heroku_qs9p8wh7',
         'host': 'mongodb://heroku_qs9p8wh7:lphijj48j811hr8hd10qkaffic@ds049925.mongolab.com:49925/heroku_qs9p8wh7'
