@@ -1,0 +1,77 @@
+{% extends "template.html" %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="section">
+
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m3">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="col s12 m6 btp">
+                    <div class="icon-block">
+                        <div class="center">
+
+                            <form action="/record" method="post">
+
+                                <div class="input-field">
+                                    <textarea id="textarea1" class="materialize-textarea center"
+                                              placeholder="Enter thoughts here" name="thoughts"></textarea>
+                                </div>
+
+                                <div class="input-field">
+                                    <select name="dist" id="dist">
+                                        <option value="" disabled selected>Whats the cognitive distortion here?</option>
+                                        {% for i in dist %}
+                                        <option value="{{ i }}">{{ i }}</option>
+                                        {% endfor %}
+
+
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <textarea id="textarea2" class="materialize-textarea center"
+                                              placeholder="Can you think of a rational response to refute this thought?" name="rational"></textarea>
+                                </div>
+
+                                <p class="range-field">
+                                    <input type="range" id="level" min="0" max="100" name="level"/>
+                                    <label for="level">Current anxiety Level</label>
+
+                                </p>
+                                <br>
+
+
+                                <div class="row center">
+                                    <button class="btn white black-text"
+                                            type="submit" style="margin-bottom: -55px"
+                                            >Record
+<i class="material-icons right red-text">fiber_manual_record</i>
+                                    </button>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "template.html" %}
+{% block content %}
+
+<style type="text/css">
+    .btp {
+        border: 1px solid green;
+        border-radius: 8px;
+        z-index: 70;
+        overflow: visible;
+    }
+</style>
+    <div class="row">
+    <div class="col s12 m3">
+        <div class="white-text">
+            <br>
+        </div>
+    </div>
+
+    <div class="col s12 m6" style="z-index: 6">
+        <div class="video-container">
+            <iframe width="640" height="360"
+                    src="https://www.youtube.com/embed/aYrlVrUlgik?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+    <div class="col s12 m3">
+        <div class="white-text">
+            <br>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="row">
+    <div class="col s12 m2">
+        <div class="icon-block">
+            <br>
+        </div>
+    </div>
+
+    <div class="col s12 m8 btp">
+        <h3 class="center">Hello from Narayana</h3>
+        An online tool for recording your automatic dysfunctional thoughts and cognitive distortions.
+        Enough with anxiety.If you already know what these terms are simply click SignUp and get started. If not click
+        learn more.
+        <br>
+        <br>
+
+        <div class="center" style="margin-bottom: -20px">
+            <a href="/register" class="btn white black-text z-depth-0 center">Learn More</a>
+        </div>
+
+    </div>
+
+
+    <div class="col s12 m2">
+        <div class="icon-block center">
+            <br>
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
