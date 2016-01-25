@@ -1,4 +1,5 @@
 from extensions import db
+from datetime import datetime
 
 
 class Thought(db.Document):
@@ -7,6 +8,7 @@ class Thought(db.Document):
     rational = db.StringField(required=False)
     distress = db.IntField(required=True)
     distortion = db.StringField(required=True)
+    timestamp = db.StringField(required=True, default=datetime.now())
 
 
 class User(db.Document):
