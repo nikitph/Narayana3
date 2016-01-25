@@ -1,5 +1,6 @@
 {% extends "template.html" %}
 {% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
 
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function () {
@@ -10,8 +11,10 @@
             var timeseries = [];
             for (var i = 0; i < msg.length; i++) {
                 var b = msg[i];
-                $('#commentary').append('<a href="" class="collection-item">' + b.dys_thought + '</a>');
-                var t = new Date(b.time);
+                                var t = new Date(b.timestamp).toLocaleString();
+                var x = moment(b.timestamp);
+
+                $('#commentary').append('<p>' + x.fromNow() + '</p>' + '<a href="" class="collection-item">' + b.dys_thought + '</a>');
                 var l = b.level;
                 timeseries.push({'time': t, 'level': l});
 

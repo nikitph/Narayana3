@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint, request, session, redirect, url_for, flash, g
 from flask.ext.security import login_required, logout_user, login_user, current_user
 from flask.templating import render_template
@@ -49,7 +50,7 @@ def record_post():
     level = data['level']
     distr = data['dist']
     rtn = data['rational']
-    thgt = Thought(dys_thought=thoughts, user=usr, distress=int(level), distortion=distr, rational=rtn).save()
+    thgt = Thought(dys_thought=thoughts, user=usr, distress=int(level), distortion=distr, rational=rtn, timestamp=str(datetime.now())).save()
     return render_template('confirm.html')
 
 @bp_user.route('/access', methods=['GET'])
