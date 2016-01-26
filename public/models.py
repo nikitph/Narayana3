@@ -14,3 +14,10 @@ class Thought(db.Document):
 class User(db.Document):
     phone = db.IntField(required=True)
     pin = db.IntField(required=True)
+
+
+class Dcheck(db.Document):
+    user = db.StringField(required=True)
+    timestamp = db.StringField(required=True, default=datetime.now())
+    score = db.IntField(required=True)
+

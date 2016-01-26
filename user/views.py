@@ -3,9 +3,9 @@ from flask import Blueprint, request, session, redirect, url_for, flash, g
 from flask.ext.security import login_required, logout_user, login_user, current_user
 from flask.templating import render_template
 from models import User
-from public.models import Thought
+from public.models import Thought, Dcheck
 
-bp_user = Blueprint('users',__name__,static_folder='../static')
+bp_user = Blueprint('users', __name__, static_folder='../static')
 
 
 @bp_user.before_request
@@ -17,29 +17,36 @@ def before_request():
 def index():
     return render_template('index.html')
 
+
 @bp_user.route('/about/')
 def about():
     return render_template('about.html')
+
 
 @bp_user.route('/hiw')
 def hiw():
     return render_template('hiw.html')
 
+
 @bp_user.route('/disclaimer')
 def disclaimer():
     return render_template('dis.html')
+
 
 @bp_user.route('/account/')
 @login_required
 def account():
     return render_template('account.html')
 
+
 @bp_user.route('/record', methods=['GET'])
 @login_required
 def record_get():
-    distortions = {'All or nothing - thinking', 'Overgeneralization', 'Mental filter', 'Discounting the positive', 'Jumping to conclusions',
+    distortions = {'All or nothing - thinking', 'Overgeneralization', 'Mental filter', 'Discounting the positive',
+                   'Jumping to conclusions',
                    'Magnification', 'Emotional reasoning', 'Should statements', 'Labeling', 'Personalization and blame'}
     return render_template('record.html', dist=distortions)
+
 
 @bp_user.route('/record', methods=['POST'])
 @login_required
@@ -58,3 +65,46 @@ def record_post():
 def access_get():
     custsubs = Thought.objects(user=g.user.get_id())
     return render_template('accessresults.html', thoughts=custsubs.to_json())
+
+
+@bp_user.route('/dcl', methods=['GET'])
+@login_required
+def dcl_get():
+    questns = {'Feeling sad or down in the dumps',
+               'Feeling unhappy or blue',
+               'Crying spells or tearfulness',
+               'Feeling discouraged',
+               'Feeling hopeless',
+               'Low self-esteem',
+               'Feeling worthless or inadequate',
+               'Guilt or shame',
+               'Criticizing yourself or blaming others',
+               'Difficulty making decisions',
+               'Loss of interest in family, friends or colleagues',
+               'Loneliness',
+               'Spending less time with family or friends',
+               'Loss of motivation',
+               'Loss of interest in work or other activities',
+               'Avoiding work or other activities',
+               'Loss of pleasure or satisfaction in life',
+               'Feeling tired',
+               'Difficulty sleeping or sleeping too much',
+               'Decreased or increased appetite',
+               'Loss of interest in sex',
+               'Worrying about your health',
+               'Do you have any suicidal thoughts?',
+               'Would you like to end your life?',
+               'Do you have a plan for harming yourself?'}
+    return render_template('dcl.html', questions=questns)
+
+
+@bp_user.route('/dcl', methods=['POST'])
+@login_required
+def dcl_post():
+    val = 0
+    for d in request.form:
+        val += int(request.form[d])
+    usr = g.user.get_id()
+    dc = Dcheck(user=usr, score=val,
+                timestamp=str(datetime.now())).save()
+    return render_template('dclresults.html', score=val)

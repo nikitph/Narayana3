@@ -1,0 +1,93 @@
+{% extends "template.html" %}
+{% block style %}
+    <style>
+
+        [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+            padding-left: 25px;
+        }
+
+        [type="radio"]:not(:checked) + label:before {
+            border-radius: 50%;
+            border: 2px solid rgb(208, 141, 136);
+        }
+    </style>
+
+{% endblock %}
+
+{% macro add_question(question, numb) %}
+
+    <div class="black-text darken-3"> {{ numb }} - {{ question }} </div>
+    <p>
+        <input name="question{{ numb }}" type="radio" id="option1_{{ numb }}" value="0"/>
+        <label for="option1_{{ numb }}">Not at all</label>
+        <input name="question{{ numb }}" type="radio" id="option2_{{ numb }}" value="1"/>
+        <label for="option2_{{ numb }}">Somewhat</label>
+        <input name="question{{ numb }}" type="radio" id="option3_{{ numb }}" value="2"/>
+        <label for="option3_{{ numb }}">Moderately</label>
+        <input name="question{{ numb }}" type="radio" id="option4_{{ numb }}" value="3"/>
+        <label for="option4_{{ numb }}">A lot</label>
+        <input name="question{{ numb }}" type="radio" id="option5_{{ numb }}" value="4"/>
+        <label for="option5_{{ numb }}">Extremely</label>
+    </p>
+{% endmacro %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="section">
+
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="col s12 m8 btp">
+                    <div class="icon-block">
+                        <div>
+                            <h5 class="center">Depression Questionnaire</h5>
+                            Instructions : Please review 25 questions from the Burn’s Depression Checklist below and
+                            mark the correct
+                            answer, indicating on how much you have experienced the described symptom during the weekly
+                            timeframe, including today. Do not hurry to fill the responses, but try to avoid fixation on
+                            each individual question, answering honestly and without internal efforts. Answer all questions.
+                            <br>
+                            <br>
+
+                            <form action="/dcl" method="post">
+                                {% for q in questions %}
+
+                                    {{ add_question(q, loop.index) }}
+
+                                {% endfor %}
+
+
+
+
+                                <div class="row center">
+                                    <button class="btn white black-text"
+                                            type="submit" style="margin-bottom: -55px"
+                                            >Submit
+                                        <i class="material-icons right blue-text">send</i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

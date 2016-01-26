@@ -2,7 +2,7 @@ from flask_admin.contrib.mongoengine import ModelView
 from user.models import User
 from flask_security import current_user
 from flask_admin import expose, BaseView
-from public.models import Thought
+from public.models import Thought,Dcheck
 
 
 
@@ -20,4 +20,8 @@ class RoleView(ModelView):
 
 
 class ThoughtView(ModelView):
+    pass
+
+
+class DcheckView(ModelView):
     pass

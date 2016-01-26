@@ -4,7 +4,7 @@ from flask import Flask, render_template
 from settings import ProdConfig
 from flask.ext.security import Security, MongoEngineUserDatastore
 from user.models import User, Role
-from admin.views import UserView, RoleView, ThoughtView
+from admin.views import UserView, RoleView, ThoughtView, DcheckView
 from user.forms import ExtendedRegisterForm
 from extensions import (
     cache,
@@ -15,7 +15,7 @@ from extensions import (
 )
 from public.views import bp_public
 from user.views import bp_user
-from public.models import Thought
+from public.models import Thought,Dcheck
 
 
 def create_app(config_object=ProdConfig):
@@ -49,6 +49,7 @@ def register_admin_views(admin):
     admin.add_view(UserView(User))
     admin.add_view(RoleView(Role))
     admin.add_view(ThoughtView(Thought))
+    admin.add_view(DcheckView(Dcheck))
     return None
 
 

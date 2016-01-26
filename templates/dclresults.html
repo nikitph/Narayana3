@@ -1,0 +1,58 @@
+{% extends "template.html" %}
+{% block style %}
+    <style>
+
+
+    </style>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="section">
+
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="col s12 m8 btp">
+                    <div class="icon-block">
+                        <div class="center">
+                            <h5 class="center">Interpreting the Results</h5>
+
+                            <p style="text-decoration: underline"> Level of Depression and corresponding score
+                                levels</p><br>
+                            No Depression 0-5<br>
+                            Normal but unhappy 6-10<br>
+                            Mild depression 11-25<br>
+                            Moderate depression 26-50<br>
+                            Severe depression 51-75<br>
+                            Extreme depression 76-100<br>
+                            <br>
+                            <br>
+                            <h5>Your Score = {{ score }}</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
