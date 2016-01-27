@@ -377,6 +377,14 @@ width: 90%; }#}
         overflow: visible;
     }
 
+    .anm {
+        transition: all 0.3s ease;
+
+    }
+    .anm:hover {
+        transform: scale(1.1);
+    }
+
 </style>
 
 {% block style %}
@@ -395,7 +403,7 @@ width: 90%; }#}
                 <li><a href="/about" class="black-text">About</a></li>
 
             </ul>
-            <a href="/" class="center brand-logo black-text"><img
+            <a href="/" class="center brand-logo black-text"><img class="anm"
                     src="/static/img/nyna4.svg" height="60px"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {% if g.user.get_id() is none %}
