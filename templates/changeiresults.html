@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+{% block style %}
+    <style>
+
+
+    </style>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="section">
+
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="col s12 m8 btp">
+                    <div class="icon-block">
+                        <div class="center">
+                            <h5 class="center">Interpreting the Results</h5>
+
+                            <p style="text-decoration: underline"> Social Readjustment Rating Scale</p>
+                            <br>
+                           Score of 300+: At risk of illness. <br>
+
+Score of 150-299: Risk of illness is moderate (reduced by 30% from the above risk). <br>
+
+Score <150: Only have a slight risk of illness. <br>
+                            <br>
+                            <h5>Your Score = {{ score }}</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
