@@ -220,6 +220,37 @@
         transform: scale(1.1);
     }
 
+    nav ul a {
+        font-size: 1rem;
+        color: #000000;
+        display: block;
+        padding: 0 15px;
+    }
+
+    #dropdown1 > li {
+    clear: both;
+    background-color: rgb(239, 235, 233);
+    cursor: pointer;
+    min-height: 30px;
+            height: 55px;
+
+    line-height: 1.5rem;
+    width: 100%;
+    text-align: left;
+    text-transform: none;
+}
+
+    .dropdown-content {
+            min-width: 200px;
+    background-color: rgb(239, 235, 233);
+            margin-top: 64px;
+        }
+
+    #dropdown1 > li > a {
+        color: #000000;
+        font-size: 0.9rem;
+    }
+
 </style>
 
 {% block style %}
@@ -229,6 +260,16 @@
 <div class="navbar">
 
     <nav class="z-depth-0">
+
+     <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/dcl">Dcheck</a></li>
+        <li><a href="/changei">Change Inventory</a></li>
+        <li><a href="/changeina">Change Inventory(minors)</a></li>
+
+
+
+    </ul>
+
         <div class="nav-wrapper brown lighten-5">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
 
@@ -245,8 +286,8 @@
 
                     <li><a href="/login" class="black-text">Login</a></li>
                 {% else %}
-                                                            <li><a href="/dcl" class="black-text">DCheck</a></li>
-
+ <li ><a class="dropdown-button" href="#!" data-activates="dropdown1">Tools<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a href="/record" class="black-text">Record</a></li>
                                         <li><a href="/access" class="black-text">Access</a></li>
 
@@ -268,8 +309,21 @@
 
                     <li><a href="/login" class="black-text">Login</a></li>
                 {% else %}
-                                                                       <li><a href="/dcl" class="black-text">DCheck</a></li>
+<li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <a class="collapsible-header">Tools<i class="mdi-navigation-arrow-drop-down"></i></a>
 
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="/dcl">Dcheck</a></li>
+        <li><a href="/changei">Change Inventory</a></li>
+        <li><a href="/changeina">Change Inventory(minors)</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
                                         <li><a href="/record" class="black-text">Record</a></li>
                                         <li><a href="/access" class="black-text">Access</a></li>
 
