@@ -251,6 +251,16 @@
         font-size: 0.9rem;
     }
 
+    #nav-mobile > li:nth-child(1) > a i {
+        transition: all 0.2s ease-in;
+    }
+
+
+
+    #nav-mobile > li:nth-child(1) > a:hover i {
+        transform: rotate(90deg);
+    }
+
 </style>
 
 {% block style %}
@@ -287,7 +297,7 @@
                     <li><a href="/login" class="black-text">Login</a></li>
                 {% else %}
  <li ><a class="dropdown-button" href="#!" data-activates="dropdown1">Tools<i
-                        class="material-icons right">keyboard_arrow_down</i></a></li>
+                        class="material-icons right">keyboard_arrow_right</i></a></li>
                     <li><a href="/record" class="black-text">Record</a></li>
                                         <li><a href="/access" class="black-text">Access</a></li>
 
