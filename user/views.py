@@ -27,6 +27,10 @@ def about():
 def hiw():
     return render_template('hiw.html')
 
+@bp_user.route('/sutram')
+def sutram():
+    return render_template('sutram.html')
+
 
 @bp_user.route('/disclaimer')
 def disclaimer():
