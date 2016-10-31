@@ -31,6 +31,10 @@ def hiw():
 def sutram():
     return render_template('sutram.html')
 
+@bp_user.route('/bappa')
+def bappa():
+    return render_template('bappa.html')
+
 
 @bp_user.route('/disclaimer')
 def disclaimer():
