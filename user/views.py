@@ -35,6 +35,10 @@ def sutram():
 def bappa():
     return render_template('bappa.html')
 
+@bp_user.route('/udayam')
+def udayam():
+    return render_template('udayam.html')
+
 
 @bp_user.route('/disclaimer')
 def disclaimer():
