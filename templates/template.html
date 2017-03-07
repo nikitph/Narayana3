@@ -294,7 +294,7 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {% if g.user.get_id() is none %}
 
-                    <li><a href="/login" class="black-text">Login</a></li>
+                    <li><a href="/login" class="btn white black-text z-depth-0">Login</a></li>
                 {% else %}
  <li ><a class="dropdown-button" href="#!" data-activates="dropdown1">Tools<i
                         class="material-icons right">keyboard_arrow_right</i></a></li>
@@ -304,10 +304,7 @@
 
                     <a href="/logout" class="btn white black-text z-depth-0">Logout</a>
                 {% endif %}
-                {% if g.user.get_id() is none %}
-
-                    <a href="/register" class="btn white black-text z-depth-0">Signup</a>
-                {% endif %}
+               
                 <br>
             </ul>
 
