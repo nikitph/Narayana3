@@ -1,4 +1,20 @@
 {% extends "template.html" %}
+
+{% block script %}
+        <script>
+
+      $(document).ready(function() {
+    $('select').material_select();
+                $(".button-collapse").sideNav();
+            $("#modal1").openModal({      opacity: 0 // Opacity of modal background
+});
+
+
+  });
+
+    </script>
+
+{% endblock %}
 {% block content %}
 
 <style type="text/css">
@@ -43,11 +59,9 @@
     </div>
 
     <div class="col s12 m8 btp">
-        <h3 class="center">Hello from Narayana</h3>
-        An online tool for recording your automatic dysfunctional thoughts and cognitive distortions. And Dcheck to track your depression over time.
-        Based on Burn's depression checklist.
-        Enough with anxiety.If you already know what these terms are simply click SignUp and get started. If not click
-        learn more.
+        <h3 class="center">Hello from Naryna</h3>
+        Naryna is a CBT tool to capture your cognitive distortions. We aim to utilize the latest advancements in Data science and machine learning along with a little bit of crowdsourcing magic
+        to automatically refute your negative thoughts and cognitive distortions. We also provide a depression tracking tool to keep a track of various aspects of depression over time.
         <br>
         <br>
 
@@ -69,6 +83,24 @@
 
 
 </div>
+
+    <div id="modal1" class="modal grey lighten-3" style="z-index: 1005;">
+    <div class="modal-content">
+      <h5 class="center">Important Update</h5>
+      <p>Nov 2015 : Naryna will soon be acqu-hire-merging. Beginning Jan 2016, Naryna as an entity will shut down. New signups will be closed by the end of next month.
+      The service will however remain operational through 2017 for existing users. Bug fixes will be suspended from Jan 2016.
+      We remain committed to releasing our iOS app but it will now probably see the light of the day through one of our individual
+      contributors and with only offline functionality. It will still hold the moniker Naryna. We *may* open source a limited part of our codebase.</p>
+        <p> But Why? : We started Naryna to help people with depression. We were just not able to expand enough to help people at a
+            scale we wanted to. But suffice it to say that Naryna will live on as a part of a much grander and magnificent company which
+            prefers to remain in stealth at the moment. Thank you for your love and support. -- Naryna Team.
+
+        </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
 
 
 {% endblock %}
