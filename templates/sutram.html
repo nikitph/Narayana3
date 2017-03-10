@@ -15,35 +15,13 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-72839402-1', 'auto');
   ga('send', 'pageview');
-
 </script>
-    {% block script %}
-
-        <script>
-
-            $('#bx').click(function () {
-                $('#bx').addClass('.modif');
-            });
-
-        $(document).ready(function() {
-    $('select').material_select();
-                $(".button-collapse").sideNav();
-
-  });
-
-
-        </script>
-
-
-    {% endblock %}
-
+   
 
 </head>
 <style>
-
     .dropdown-content li {
             clear: both;
             color: rgba(0, 0, 0, 0.87);
@@ -58,123 +36,96 @@
         .dropdown-content {
             background-color: rgba(0, 0, 0, 0.9);
         }
-
-
     .modif:hover {
-
         animation: modif 2s;
-
     }
-
     .nav-wrapper {
         border-bottom: 1px solid lightgray;
     }
-
     nav ul li {
                 border-bottom: 2px solid white;
-
         transition: border-bottom-color 0.5s ease-in-out;
     }
-
     nav ul li:hover
     {
         border-bottom: 2px solid darkred;
         background-color: rgb(239, 235, 233);
     }
-
     @keyframes modif {
         from {
             width: 100%;
             height: 100%;
         }
-
         to {
             width: 150%;
             height: 110%;
         }
     }
-
     .animated {
         -webkit-animation-duration: 1s;
         animation-duration: 1s;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
     }
-
     .h5 {
         font-weight: 200;
     }
-
     .col {
         padding: 0
     }
-
-
-
     @-webkit-keyframes fadeIn {
         0% {
             opacity: 0;
         }
-
         100% {
             opacity: 1;
         }
     }
-
     @keyframes fadeIn {
         0% {
             opacity: 0;
         }
-
         100% {
             opacity: 1;
         }
     }
-
     .fadeIn {
         -webkit-animation-name: fadeIn;
         animation-name: fadeIn;
     }
-
     @-webkit-keyframes fadeInRight {
         from {
             opacity: 0;
             -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
         }
-
         100% {
             opacity: 1;
             -webkit-transform: none;
             transform: none;
         }
     }
-
     @keyframes fadeInRight {
         from {
             opacity: 0;
             -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
         }
-
         100% {
             opacity: 1;
             -webkit-transform: none;
             transform: none;
         }
     }
-
     .fadeInRight {
         -webkit-animation-name: fadeInRight;
         animation-name: fadeInRight;
     }
-
     .bt {
         position: relative;
         left: 40%;
         margin-bottom: -25px;
     }
-
     html {
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -185,20 +136,16 @@
         -moz-osx-font-smoothing: grayscale;
         font-weight: 100;
     }
-
     h1 {
         font-weight: 200;
     }
-
     .btn {
         border-radius: 12px;
         border: 1px solid green;
     }
-
     nav {
         background-color: #ffffff;
     }
-
     #play-pause {
         position: absolute;
         margin-left: 50%;
@@ -208,139 +155,68 @@
 .btp {
         border: 1px solid green;
         border-radius: 8px;
-        z-index: 70;
+        z-index: 71;
         overflow: visible;
     }
-
     .anm {
         transition: all 0.3s ease;
-
     }
     .anm:hover {
         transform: scale(1.1);
     }
-
     nav ul a {
         font-size: 1rem;
         color: #000000;
         display: block;
         padding: 0 15px;
     }
-
     #dropdown1 > li {
     clear: both;
     background-color: rgb(239, 235, 233);
     cursor: pointer;
     min-height: 30px;
             height: 55px;
-
     line-height: 1.5rem;
     width: 100%;
     text-align: left;
     text-transform: none;
 }
-
     .dropdown-content {
             min-width: 200px;
     background-color: rgb(239, 235, 233);
             margin-top: 64px;
         }
-
     #dropdown1 > li > a {
         color: #000000;
         font-size: 0.9rem;
     }
-
-    #nav-mobile > li:nth-child(1) > a i {
-        transition: all 0.2s ease-in;
-    }
-
-
-
-    #nav-mobile > li:nth-child(1) > a:hover i {
-        transform: rotate(90deg);
-    }
-
 </style>
 
-{% block style %}
-{% endblock %}
 
 <body>
 <div class="navbar">
 
     <nav class="z-depth-0">
 
-     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="/dcl">Dcheck</a></li>
-        <li><a href="/changei">Change Inventory</a></li>
-        <li><a href="/changeina">Change Inventory(minors)</a></li>
+   
 
-
-
-    </ul>
-
-        <div class="nav-wrapper brown lighten-5">
+        <div class="nav-wrapper white">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
 
             <ul id="nav-mobile" class="hide-on-med-and-down">
-                <li><a href="/hiw" class="black-text">How it works</a></li>
-
-                <li><a href="/about" class="black-text">About</a></li>
+                
 
             </ul>
             <a href="/" class="center brand-logo black-text"><img class="anm"
-                    src="/static/img/nyna4.svg" height="50px" style="margin-top: 4px"></a>
+                    src="/static/img/Icon-App-60x60@2x.png" height="60px"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {% if g.user.get_id() is none %}
 
-                    <li><a href="/login" class="btn white black-text z-depth-0">Login</a></li>
-                {% else %}
- <li ><a class="dropdown-button" href="#!" data-activates="dropdown1">Tools<i
-                        class="material-icons right">keyboard_arrow_right</i></a></li>
-                    <li><a href="/record" class="black-text">Record</a></li>
-                                        <li><a href="/access" class="black-text">Access</a></li>
-
-
-                    <a href="/logout" class="btn white black-text z-depth-0">Logout</a>
-                {% endif %}
-               
+                    
                 <br>
             </ul>
 
         <ul class="side-nav" id="mobile-demo">
-        <li><a href="/hiw" class="black-text">How it works</a></li>
-
-                <li><a href="/about" class="black-text">About</a></li>
-       {% if g.user.get_id() is none %}
-
-                    <li><a href="/login" class="black-text">Login</a></li>
-                {% else %}
-<li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li>
-                            <a class="collapsible-header">Tools<i class="mdi-navigation-arrow-drop-down"></i></a>
-
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="/dcl">Dcheck</a></li>
-        <li><a href="/changei">Change Inventory</a></li>
-        <li><a href="/changeina">Change Inventory(minors)</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                                        <li><a href="/record" class="black-text">Record</a></li>
-                                        <li><a href="/access" class="black-text">Access</a></li>
-
-
-                    <li><a href="/logout" class="black-text">Logout</a></li>
-                {% endif %}
-                {% if g.user.get_id() is none %}
-
-                    <li><a href="/register" class="black-text">Signup</a></li>
-                {% endif %}
+        
       </ul>
 
         </div>
@@ -352,16 +228,64 @@
 
 <br>
 <div class="animated fadeIn">
-{% block content %}
+ <div class="container">
+        <div class="section">
 
-{% endblock %}
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="col s12 m8 btp">
+                    <div class="icon-block">
+                       <h5 class="center">Sutram</h5>
+
+Patanjali, the great sage from India inscribed the Yoga Sūtras of Patañjali thousands of years ago.This app is a reference to Yoga sutras of Patanjali and contains original sanskrit verses from his 4 major Pada's
+<br>
+1. Samadhi Pada
+                        <br>
+                        
+2. Sadhana Pada
+                        <br>
+                        
+3. Vibhuti Pada
+                        <br>
+4. Kaivalya Pada
+                        <br>
+
+The verses are presented in their original language : Sanskrit. The app therefore would be most useful for those who understand it. 
+                        Download on the IOS app store today!
+
+
+<br>
+<br>
+                     <div class="center">
+                         <img class="anm"
+                    src="/static/img/dfr.png" height=300px style="margin-bottom:-100px">
+                         
+                        </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m2">
+                    <div class="icon-block">
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 </div>
 </body>
 </html>
-
-
-
 
 
 
